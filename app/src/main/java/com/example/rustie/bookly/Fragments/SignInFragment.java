@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rustie.bookly.Activities.HomePageActivity;
 import com.example.rustie.bookly.Activities.SignUpActivity;
+import com.example.rustie.bookly.Activities.SplashActivity;
 import com.example.rustie.bookly.Classes.User;
 import com.example.rustie.bookly.R;
 import com.example.rustie.bookly.Singletons.Utils;
@@ -209,6 +211,16 @@ public class SignInFragment extends Fragment implements GoogleApiClient.OnConnec
                 // Signed in successfully, show authenticated UI.
                 GoogleSignInAccount acct = result.getSignInAccount();
                 Log.d(TAG, acct.getDisplayName() + " " + acct.getEmail() + " " + acct.getFamilyName() + " " + acct.getGivenName() + " " +acct.getId());
+
+                if (!acct.getEmail().contains("@berkeley.edu")) {
+                    FirebaseAuth.getInstance().signOut();
+                    Log.d(TAG, "Going to SplashActivity");
+                    Intent intent = new Intent(getActivity(), SignInFragment.class);
+                    intent.putExtra("bad_email", true); // u have a bad email
+                    startActivity(intent);
+                    getActivity().finish();
+                    return;
+                }
 
                 firebaseAuthWithGoogle(acct);
 

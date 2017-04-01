@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.rustie.bookly.BuildConfig;
 import com.example.rustie.bookly.Classes.User;
@@ -45,6 +46,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         final Context context = this;
         // Defines the code for log in detection and which activity to redirect to
@@ -106,7 +108,7 @@ public class SplashActivity extends AppCompatActivity {
                 if (user != null) {
                     Log.d(TAG, "User signed in: " + user.getUid());
                     Log.d(TAG, "Transferring to User Sign Up");
-                    Utils.getDB().child("users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    Utils.getDB().child("Users").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             User currentUser = dataSnapshot.getValue(User.class);

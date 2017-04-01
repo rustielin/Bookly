@@ -22,6 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.rustie.bookly.Adapters.NavDrawerAdapter;
 import com.example.rustie.bookly.Classes.User;
 import com.example.rustie.bookly.Fragments.PostFeedFragment;
 import com.example.rustie.bookly.R;
@@ -84,7 +85,7 @@ public class HomePageActivity extends AppCompatActivity {
         mFragmentImagesArray = getResources().obtainTypedArray(R.array.nav_images);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("");
+        toolbar.setTitle("Post Feed");
         setSupportActionBar(toolbar);
 
 
@@ -97,9 +98,6 @@ public class HomePageActivity extends AppCompatActivity {
                 super.onDrawerClosed(view);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
 
-                // mark change so that tutorial never shows up again
-                mEditor.putBoolean("run_tutorial", false);
-                mEditor.commit();
             }
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -170,11 +168,12 @@ public class HomePageActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     // user profile stuff not yet
-                    Bundle bundle = new Bundle();
-                    bundle.putString("UID", FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
-                    fragment = new UserInfoFragment();
-                    fragment.setArguments(bundle);
-                    break;
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString("UID", FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
+//                    fragment = new UserInfoFragment();
+//                    fragment.setArguments(bundle);
+//                    break;
+                    return;
 
                 case 1:
                     // News Feed
@@ -183,26 +182,17 @@ public class HomePageActivity extends AppCompatActivity {
 
                 case 2:
                     // Schedule
-                    fragment = new SessionsFragment();
-                    break;
+//                    fragment = new SearchFragment();
+//                    break;
+                    return;
 
                 case 3:
                     // Messages
-                    fragment = new ChatroomListFragment();
-                    break;
-                case 4:
-                    // Wallet
-                    fragment = new ReceiptFragment();
-                    break;
-                case 5:
-                    // Payment Options
-                    fragment = new CardFragment();
-                    break;
-                case 6:
-                    // Become a Tutor
-                    break;
+//                    fragment = new RequestFragment();
+//                    break;
+                    return;
 
-                case 7:
+                case 4:
                     // Logout
                     FirebaseAuth.getInstance().signOut();
 
@@ -244,7 +234,7 @@ public class HomePageActivity extends AppCompatActivity {
         mNavBalance = (TextView) findViewById(R.id.balance);
 
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseDatabase.getInstance().getReference("users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
