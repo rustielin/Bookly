@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rustie.bookly.Adapters.PostFeedPagerAdapter;
 import com.example.rustie.bookly.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,7 @@ public class PostFeedFragment extends Fragment {
 
     public static final String TAG = "PostFeedFragment";
 
+    private PostFeedPagerAdapter mAdapter;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private FloatingActionButton mFab;
@@ -87,7 +89,7 @@ public class PostFeedFragment extends Fragment {
                 //CreatePostDialog fragment = new CreatePostDialog();
                 //fragment.show(getActivity().getSupportFragmentManager(), "Add Item");
 
-                Intent intent = new Intent(getActivity(), NewPostDialogActivity.class);
+//                Intent intent = new Intent(getActivity(), NewPostDialogActivity.class);
 
 
 
@@ -106,4 +108,4 @@ public class PostFeedFragment extends Fragment {
 
 }
 
-}
+

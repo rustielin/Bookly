@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.rustie.bookly.Activities.BottomOffsetDecoration;
 import com.example.rustie.bookly.Adapters.PostFeedAdapter;
+import com.example.rustie.bookly.Classes.Post;
 import com.example.rustie.bookly.R;
 import com.example.rustie.bookly.Singletons.Utils;
 import com.example.rustie.bookly.Viewholders.PostViewHolder;

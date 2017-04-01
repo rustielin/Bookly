@@ -3,6 +3,8 @@ package com.example.rustie.bookly.Viewholders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.example.rustie.bookly.Classes.Post;
+
 /**
  * Created by rustie on 4/1/17.
  */
