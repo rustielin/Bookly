@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "101033063718",
+    "firebase_url": "https://bookly-77709.firebaseio.com",
+    "project_id": "bookly-77709",
+    "storage_bucket": "bookly-77709.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101033063718:android:4b345521ec421456",
+        "android_client_info": {
+          "package_name": "com.example.rustie.bookly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101033063718-nrm0do8mpqqc7e26qg1llrg61qv9j71u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rustie.bookly",
+            "certificate_hash": "99e828b89fd03e16ece10559e992721a57354428"
+          }
+        },
+        {
+          "client_id": "101033063718-k915b35t08ak8jo1ibduqo0e8mqrvd13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZbhTLpgJnZxm71sXZUegspcmvoJVALaw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101033063718-k915b35t08ak8jo1ibduqo0e8mqrvd13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
