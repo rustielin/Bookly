@@ -15,7 +15,7 @@ public class PostFeedAdapter extends FirebaseRecyclerAdapter<Post, PostViewHolde
     private static final String TAG = "PostFeedAdapter";
 
     public PostFeedAdapter(Class<Post> modelClass, int modelLayout, Class<PostViewHolder> viewHolderClass, Query
-            ref, Boolean isTutor) {
+            ref) {
         super(modelClass, modelLayout, viewHolderClass, ref);
     }
 

@@ -77,19 +77,15 @@ public class PostFeedRecyclerFragment extends Fragment {
             mQuery = mRef.orderByChild("user_id").equalTo(uid);
         }
 
-        FirebaseDatabase.getInstance().getReference("users").child(uid).child("tutor_bool").addListenerForSingleValueEvent(new ValueEventListener() {
+        Utils.getDB().child("Users").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-                Boolean isTutor = dataSnapshot.getValue(Boolean.class);
-
 
                 mAdapter = new PostFeedAdapter(
                         Post.class,
                         R.layout.postviewholder_item,
                         PostViewHolder.class,
-                        mQuery,
-                        isTutor.booleanValue());
+                        mQuery);
 
                 mRecyclerView.setAdapter(mAdapter);
 

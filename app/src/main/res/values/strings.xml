@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Bookly</string>
     <string name="action_settings">Settings</string>
-
-
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <string-array name="departments_array">
+        <item>STAT</item>
+    </string-array>
+
+    <string-array name="classes_array">
+        <item>152</item>
+    </string-array>
 </resources>

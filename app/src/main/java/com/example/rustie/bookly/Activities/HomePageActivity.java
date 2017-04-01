@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.example.rustie.bookly.Adapters.NavDrawerAdapter;
 import com.example.rustie.bookly.Classes.User;
 import com.example.rustie.bookly.Fragments.PostFeedFragment;
+import com.example.rustie.bookly.Fragments.SearchFragment;
 import com.example.rustie.bookly.R;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
@@ -181,10 +182,10 @@ public class HomePageActivity extends AppCompatActivity {
                     break;
 
                 case 2:
-                    // Schedule
-//                    fragment = new SearchFragment();
-//                    break;
-                    return;
+                    // Search
+                    fragment = new SearchFragment();
+                    break;
+//                    return;
 
                 case 3:
                     // Messages
