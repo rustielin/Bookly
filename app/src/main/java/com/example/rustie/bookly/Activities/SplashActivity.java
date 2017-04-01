@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth.AuthStateListener mAuthListenerGlobal;
 
-    private FirebaseMessaging mMessage;
+    private FirebaseMessaging mMessage; // TODO: for later??
 
     // All constant data is fetched here.
     @Override
@@ -60,9 +60,11 @@ public class SplashActivity extends AppCompatActivity {
 
         // Set data expiration to 12 hours, or 0 if in dev mode
 
-        long cacheExpiration = 3600 * 12; // 12 hours
-        if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled())
-            cacheExpiration = 0;
+//        long cacheExpiration = 3600 * 12; // 12 hours
+//        if (mFirebaseRemoteConfig.getInfo().getConfigSettings().isDeveloperModeEnabled())
+//            cacheExpiration = 0;
+
+        long cacheExpiration = 0;
 
 
         Log.d(TAG, "Attempting to Fetch Data!");
@@ -76,36 +78,6 @@ public class SplashActivity extends AppCompatActivity {
 
                             Log.d(TAG, "Remote Data Fetched!");
 
-                            PackageInfo pInfo = null;
-
-                            if (!mFirebaseRemoteConfig.getBoolean("valid")) {
-
-                                Log.d(TAG, "Outdated Item");
-                                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-
-                                // set title
-                                alertDialogBuilder.setTitle("Uh-Oh");
-                                alertDialogBuilder.setMessage("This version of Geeni is out of date. An update is available on the Play Store!");
-
-                                // set dialog message
-                                alertDialogBuilder
-                                        .setCancelable(false)
-                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                            public void onClick(DialogInterface dialog, int id) {
-                                                // if this button is clicked, close
-                                                // current activity
-                                                SplashActivity.this.finish();
-                                            }
-                                        });
-
-                                // create alert dialog
-                                final AlertDialog alertDialog = alertDialogBuilder.create();
-
-                                alertDialog.show();
-
-                                return;
-
-                            }
 
 
                             // Attach the Auth Listener so the Activity can start the appropriate intents.
@@ -126,7 +98,6 @@ public class SplashActivity extends AppCompatActivity {
         final Context context = this;
         mAuth = FirebaseAuth.getInstance();
         mMessage = FirebaseMessaging.getInstance();
-
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

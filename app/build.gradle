@@ -1,23 +1,5 @@
 apply plugin: 'com.android.application'
 
-android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-    defaultConfig {
-        applicationId "com.example.rustie.bookly"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -26,6 +8,9 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:design:25.1.1'
+
+    // CircleImageView
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 
     // Firebase
     compile 'com.google.firebase:firebase-core:10.0.1'
@@ -45,6 +30,30 @@ dependencies {
     //compile 'com.firebaseui:firebase-ui-storage:1.0.1'
 
     testCompile 'junit:junit:4.12'
+}
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.rustie.bookly"
+        minSdkVersion 21
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        pickFirst  'META-INF/LICENSE'
+    }
 }
 
 

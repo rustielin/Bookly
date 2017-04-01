@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="26sp"
+            android:text="Add Your Info"
+            android:layout_marginBottom="16dp"
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sign_up_fragment_profile"
+            android:layout_marginBottom="18dp"
+            android:src="@drawable/profile_picture_placeholder"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:id="@+id/sign_up_fragment_google"
+                android:layout_weight="1"
+                android:text="Use Google Picture"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"/>
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:id="@+id/upload"
+                android:layout_weight="1"
+                android:text="Upload Picture"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:id="@+id/sign_up_fragment_submit"
+        android:text="Submit"
+        />
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="screens">
+        <item>User Settings</item>
+        <item>Post Feed</item>
+        <item>Search</item>
+        <item>Request</item>
+        <item>Logout</item>
+    </string-array>
+
+    <integer-array name="nav_images">
+        <item>@drawable/ic_rss_feed_white</item>
+        <item>@drawable/search</item>
+        <item>@drawable/ic_record_voice_over_white</item>
+        <item>@drawable/ic_exit_to_app</item>
+    </integer-array>
+
+</resources>
