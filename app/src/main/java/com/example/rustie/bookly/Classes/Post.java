@@ -14,7 +14,7 @@ public class Post {
     private int price;
     private String description;
     private String dept;
-    private int class_num;
+    private String class_num;
     private String book_gs;
 
     public Post() {
@@ -75,11 +75,11 @@ public class Post {
         this.dept = dept;
     }
 
-    public int getClass_num() {
+    public String getClass_num() {
         return class_num;
     }
 
-    public void setClass_num(int class_num) {
+    public void setClass_num(String class_num) {
         this.class_num = class_num;
     }
 

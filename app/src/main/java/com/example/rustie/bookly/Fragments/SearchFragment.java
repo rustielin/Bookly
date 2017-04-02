@@ -71,7 +71,7 @@ public class SearchFragment extends Fragment {
         mDepartmentsSpinner = (Spinner) v.findViewById(R.id.department_spinner);
         mClassesSpinner = (Spinner) v.findViewById(R.id.class_spinner);
 
-        ArrayAdapter<String> deptAdapter = new ArrayAdapter<>(v.getContext(), android.R.layout.simple_spinner_dropdown_item, mDepartmentList);
+        ArrayAdapter<String> deptAdapter = new ArrayAdapter<>(v.getContext(), android.R.layout.simple_spinner_item, mDepartmentList);
         deptAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mDepartmentsSpinner.setAdapter(deptAdapter);
         mDepartmentsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
