@@ -91,8 +91,10 @@ public class PostFeedFragment extends Fragment {
 
 //                Intent intent = new Intent(getActivity(), NewPostDialogActivity.class);
 
+                CreatePostDialog fragment = new CreatePostDialog();
+                fragment.show(getActivity().getSupportFragmentManager(), "Add Item");
 
-
+                Intent intent = new Intent(getActivity(), NewPostActivity.class);
             }
         });
 
