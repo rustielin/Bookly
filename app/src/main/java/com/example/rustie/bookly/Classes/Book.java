@@ -6,9 +6,11 @@ package com.example.rustie.bookly.Classes;
 
 public class Book {
 
-    private String department;
+    public static final String gs_bucket = "gs://bookly-77709.appspot.com/";
+
+    private String dept;
     private String class_number;
-    private int ISBN;
+    private String ISBN;
     private String author;
     private String edition;
     private String image_gs;
@@ -16,16 +18,28 @@ public class Book {
     private String publisher;
     private int quantity;
 
+    public Book() {
+
+    }
+
     public Book(Book book) {
-
+        setDept(book.getDept());
+        setClass_number(book.getClass_number());
+        setISBN(book.getISBN());
+        setAuthor(book.getAuthor());
+        setEdition(book.getEdition());
+        setImage_gs(book.getImage_gs());
+        setName(book.getName());
+        setPublisher(book.getPublisher());
+        setQuantity(book.getQuantity());
     }
 
-    public String getDepartment() {
-        return department;
+    public String getDept() {
+        return dept;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setDept(String dept) {
+        this.dept = dept;
     }
 
     public String getClass_number() {
@@ -36,11 +50,11 @@ public class Book {
         this.class_number = class_number;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 

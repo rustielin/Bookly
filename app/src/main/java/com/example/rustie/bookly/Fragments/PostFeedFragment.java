@@ -86,7 +86,7 @@ public class PostFeedFragment extends Fragment {
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
-                //CreatePostDialog fragment = new CreatePostDialog();
+//                CreatePostDialog fragment = new CreatePostDialog();
                 //fragment.show(getActivity().getSupportFragmentManager(), "Add Item");
 
 //                Intent intent = new Intent(getActivity(), NewPostDialogActivity.class);

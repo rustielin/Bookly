@@ -17,6 +17,20 @@ public class Post {
     private int class_num;
     private String book_gs;
 
+    public Post() {
+
+    }
+
+    public Post(Post post) {
+        setISBN(post.getISBN());
+        setQuality(post.getQuality());
+        setPrice(post.getPrice());
+        setDescription(post.getDescription());
+        setDept(post.getDept());
+        setClass_num(post.getClass_num());
+        setBook_gs(post.getBook_gs());
+    }
+
     public static String getGs_bucket() {
         return gs_bucket;
     }
