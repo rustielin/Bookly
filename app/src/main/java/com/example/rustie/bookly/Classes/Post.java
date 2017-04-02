@@ -9,6 +9,7 @@ public class Post {
     
     public static final String gs_bucket = "gs://bookly-77709.appspot.com/";
 
+    private String user_id;
     private int ISBN;
     private String quality;
     private int price;
@@ -33,6 +34,14 @@ public class Post {
 
     public static String getGs_bucket() {
         return gs_bucket;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
     public int getISBN() {
